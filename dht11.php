@@ -1,5 +1,6 @@
 <?php
 require_once ('include/function.php');
+
 class dht11{
  public $link='';
  function __construct($distance, $temp, $humidity){
@@ -8,8 +9,8 @@ class dht11{
  }
  
  function connect(){
-  $this->link = mysqli_connect('localhost','admin','Qwerty-592986') or die('Cannot connect to the DB');
-  mysqli_select_db($this->link,'belajar') or die('Cannot select the DB');
+  $this->link = mysqli_connect('localhost','root','') or die('Cannot connect to the DB');
+  mysqli_select_db($this->link,'garbagedb') or die('Cannot select the DB');
  }
  
  function storeInDB($distance, $temp, $humidity){
